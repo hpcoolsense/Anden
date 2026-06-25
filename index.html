@@ -589,6 +589,66 @@
       filter: grayscale(0%);
     }
 
+    /* ===== Servicios e instalaciones ===== */
+    .instal-header { margin: 6rem 0 3rem; }
+
+    .instal-title {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      color: var(--verde-bosque);
+      margin-bottom: 0.5rem;
+    }
+
+    .instal-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+
+    .instal-card {
+      position: relative;
+      overflow: hidden;
+      background: var(--verde-bosque);
+      color: var(--marfil);
+      padding: 2.1rem 1.8rem;
+      border-top: 2px solid var(--ocre);
+      transition: transform 0.4s ease;
+    }
+
+    .instal-card:hover { transform: translateY(-4px); }
+
+    .instal-card.trama::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('MARCA_ANDEN/ILUSTRACIONES-TRAMAS/1-22.png');
+      background-size: 300px;
+      opacity: 0.07;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .instal-card > * { position: relative; z-index: 1; }
+
+    .instal-icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+
+    .instal-card h4 {
+      font-size: 1.1rem;
+      color: var(--marfil);
+      margin-bottom: 0.6rem;
+    }
+
+    .instal-card p {
+      font-size: 0.85rem;
+      color: var(--beige);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
     /* ========== CONTACTO ========== */
     .contact-section {
       position: relative;
@@ -863,6 +923,7 @@
     @media (max-width: 1024px) {
       .services-grid { gap: 1.5rem; }
       .prestaciones { grid-template-columns: repeat(2, 1fr); }
+      .instal-grid { grid-template-columns: repeat(3, 1fr); }
     }
 
     @media (max-width: 768px) {
@@ -898,6 +959,8 @@
 
       .servicios-grid { grid-template-columns: 1fr; gap: 3rem; }
       .servicio-img img { height: 360px; }
+      .instal-grid { grid-template-columns: repeat(2, 1fr); }
+      .instal-header { margin: 4rem 0 2.5rem; }
 
       .gallery-grid {
         grid-template-columns: 1fr 1fr;
@@ -935,6 +998,7 @@
       .section { padding: 5rem 0; }
       .container { padding: 0 1.25rem; }
       .hero-logo { width: 160px; }
+      .instal-grid { grid-template-columns: 1fr; }
       .gallery-grid { grid-template-columns: 1fr; }
       .gallery-item:nth-child(5) { grid-column: auto; }
     }
@@ -1079,6 +1143,70 @@
           <div class="servicio-img">
             <img src="MARCA_ANDEN/ESTILO FOTOGRAFICO/02fc97e596b505f4d493755f4da51d96.jpg" alt="Lanzamiento de marca en Andén" loading="lazy">
           </div>
+        </article>
+      </div>
+
+      <div class="instal-header">
+        <p class="section-label reveal">Servicios e instalaciones</p>
+        <h3 class="instal-title reveal reveal-delay-1">Todo lo que tu evento necesita</h3>
+        <div class="divider-line reveal reveal-delay-2"></div>
+      </div>
+
+      <div class="instal-grid">
+        <article class="instal-card trama reveal">
+          <svg class="instal-icon" viewBox="0 0 24 24" fill="none" stroke="#AF9872" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="7.5" rx="1"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1"/></svg>
+          <h4>Montaje &amp; Stands</h4>
+          <p>Armado integral de ferias y expos: stands modulares, tabiquería, señalética y mobiliario.</p>
+        </article>
+        <article class="instal-card reveal reveal-delay-1">
+          <svg class="instal-icon" viewBox="0 0 24 24" fill="none" stroke="#AF9872" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18h18"/><path d="M5 18a7 7 0 0 1 14 0"/><path d="M12 8V6.5"/><circle cx="12" cy="5.2" r="1"/></svg>
+          <h4>Catering &amp; Gastronomía</h4>
+          <p>Cocina de autor, barras premium y servicio de mozos para galas, cenas y eventos corporativos.</p>
+        </article>
+        <article class="instal-card reveal reveal-delay-2">
+          <svg class="instal-icon" viewBox="0 0 24 24" fill="none" stroke="#AF9872" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="12" height="18" rx="2"/><circle cx="12" cy="14.5" r="3.5"/><circle cx="12" cy="7" r="1.1"/></svg>
+          <h4>Producción Técnica</h4>
+          <p>Sonido de alta potencia, iluminación profesional, pantallas LED y escenarios a medida.</p>
+        </article>
+        <article class="instal-card trama reveal reveal-delay-3">
+          <svg class="instal-icon" viewBox="0 0 24 24" fill="none" stroke="#AF9872" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5.5c0 4.2-3 7.2-7 8.5-4-1.3-7-4.3-7-8.5V6z"/><path d="M9 12l2 2 4-4"/></svg>
+          <h4>Seguridad &amp; Logística</h4>
+          <p>Control de acceso, personal de seguridad y coordinación logística completa.</p>
+        </article>
+        <article class="instal-card reveal">
+          <svg class="instal-icon" viewBox="0 0 24 24" fill="none" stroke="#AF9872" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2.5"/><path d="M10 17V7h3.2a2.6 2.6 0 0 1 0 5.2H10"/></svg>
+          <h4>Estacionamiento propio</h4>
+          <p>Amplia playa de estacionamiento dentro del predio para asistentes y proveedores.</p>
+        </article>
+        <article class="instal-card reveal reveal-delay-1">
+          <svg class="instal-icon" viewBox="0 0 24 24" fill="none" stroke="#AF9872" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M3 12h18"/><path d="M5.6 5.6l12.8 12.8"/><path d="M18.4 5.6L5.6 18.4"/></svg>
+          <h4>Climatización &amp; Confort</h4>
+          <p>Ambientes climatizados y acondicionados para eventos cómodos en cualquier época del año.</p>
+        </article>
+        <article class="instal-card trama reveal reveal-delay-2">
+          <svg class="instal-icon" viewBox="0 0 24 24" fill="none" stroke="#AF9872" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12a10 10 0 0 1 14 0"/><path d="M8 15a6 6 0 0 1 8 0"/><circle cx="12" cy="18.5" r="1"/></svg>
+          <h4>Conectividad &amp; WiFi</h4>
+          <p>Internet de alta velocidad para streaming, acreditaciones y expositores conectados.</p>
+        </article>
+        <article class="instal-card reveal reveal-delay-3">
+          <svg class="instal-icon" viewBox="0 0 24 24" fill="none" stroke="#AF9872" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9.5 3v1.5h5V3"/><circle cx="12" cy="10.5" r="2.3"/><path d="M8.2 17c0.4-2.2 7.2-2.2 7.6 0"/></svg>
+          <h4>Acreditación &amp; Registro</h4>
+          <p>Sistema de acreditación, control de acceso y registro de asistentes para congresos y ferias.</p>
+        </article>
+        <article class="instal-card reveal">
+          <svg class="instal-icon" viewBox="0 0 24 24" fill="none" stroke="#AF9872" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6.5" width="12.5" height="11" rx="2"/><path d="M15.5 10l5.5-3v10l-5.5-3z"/></svg>
+          <h4>Streaming &amp; Grabación</h4>
+          <p>Transmisión en vivo y grabación profesional de tu evento para llegar más lejos.</p>
+        </article>
+        <article class="instal-card trama reveal reveal-delay-1">
+          <svg class="instal-icon" viewBox="0 0 24 24" fill="none" stroke="#AF9872" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.7 4.3L18 9l-4.3 1.7L12 15l-1.7-4.3L6 9l4.3-1.7z"/><path d="M18 14.5l0.6 1.6L20.2 16.7l-1.6 0.6L18 19l-0.6-1.7L15.8 16.7l1.6-0.6z"/></svg>
+          <h4>Servicio de limpieza</h4>
+          <p>Equipo de limpieza y mantenimiento antes, durante y después de cada evento para que todo esté impecable.</p>
+        </article>
+        <article class="instal-card reveal reveal-delay-2">
+          <svg class="instal-icon" viewBox="0 0 24 24" fill="none" stroke="#AF9872" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><path d="M12 8.5v7"/><path d="M8.5 12h7"/></svg>
+          <h4>Servicio Médico y Ambulancia</h4>
+          <p>Cobertura médica en el predio con personal de salud y ambulancia disponible durante todo el evento.</p>
         </article>
       </div>
     </div>
