@@ -144,9 +144,9 @@
       transition: all 0.3s ease;
     }
 
-    .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translateY(6.5px); }
+    .nav-toggle.active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
     .nav-toggle.active span:nth-child(2) { opacity: 0; }
-    .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translateY(-6.5px); }
+    .nav-toggle.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
     /* ========== HERO ========== */
     .hero {
@@ -977,11 +977,23 @@
 
       .hero-logo { width: 200px; }
 
-      .carousel-slide { height: 44vh; min-height: 280px; }
-      .carousel-btn { width: 42px; height: 42px; font-size: 1.3rem; }
-      .carousel-btn.prev { left: 0.75rem; }
-      .carousel-btn.next { right: 0.75rem; }
+      /* Carrusel: scroll horizontal nativo con snap en mobile */
+      .carousel-track {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        transform: none !important;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+      .carousel-track::-webkit-scrollbar { display: none; }
+      .carousel-slide {
+        height: 44vh;
+        min-height: 280px;
+        min-width: 88%;
+        scroll-snap-align: center;
+      }
       .carousel-caption { left: 1.25rem; bottom: 1.25rem; }
+      .carousel-dots { display: none; }
 
       .specs { grid-template-columns: 1fr; }
       .spec-item { border-right: none; border-bottom: 1px solid rgba(175, 152, 114, 0.25); }
